@@ -15,4 +15,4 @@ process.on('SIGINT', () => {
         .then(() => console.log('Succesfully disconnected from the DB'))
         .catch((e) => console.error('Error disconnecting from the DB', e))
         .finally(() => process.exit())
-})
+});
