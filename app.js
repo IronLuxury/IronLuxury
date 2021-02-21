@@ -3,7 +3,8 @@ const createError = require("http-errors");
 const express = require("express");
 const logger = require("morgan");
 const routes = require("./config/routes.js");
-
+const hbs = require('hbs');
+const path = require('path')
 
 require("./config/db.config");
 
@@ -13,8 +14,10 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(express.static("public"));
 app.use(logger("dev"));
+//Config Hbs
 app.set("views", __dirname + "/views");
 app.set("view engine", "hbs");
+hbs.registerPartials(__dirname + '/views/partials')
 
 app.use("/", routes);
 
