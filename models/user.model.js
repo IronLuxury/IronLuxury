@@ -3,10 +3,9 @@ const bcrypt = require('bcrypt')
 const EMAIL_PATTERN = /^(([^<>()[\]\\.,;:\s@']+(\.[^<>()[\]\\.,;:\s@']+)*)|('.+'))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 const PASSWORD_PATTERN = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z]{8,}$/;
 const SALT_ROUNDS = 11
-const {
-    v4: uuidv4
-} = require('uuid'); //es el paquete de npm para generar token
-const userSchema = new mongoose.Schema({
+
+const userSchema = new mongoose.Schema(
+    {
     name: {
         type: String,
         required: 'The name is mandatory',
@@ -18,24 +17,23 @@ const userSchema = new mongoose.Schema({
         required: 'The email is mandatory',
         unique: true,
         lowercase: true,
-        match: [EMAIL_PATTERN, 'invalid email address'],
+        match: [EMAIL_PATTERN, 'Invalid email address'],
         trim: true
     },
     password: {
         type: String,
         required: 'The password is mandatory',
         unique: true,
-        match: [PASSWORD_PATTERN, "your email does not meet the requirements"]
+        match: [PASSWORD_PATTERN, "Your email does not meet the requirements"]
     },
     phone:{
         type:String,
-        required : ' the phone number is mandatory'
+        required : 'The phone number is mandatory'
     },
     dni:{
         type:String,
-        require:'Es necesario que dni',
+        require:'DNI is necessary',
         unique:true
-
     },
     active: {
         type: Boolean,
@@ -46,7 +44,10 @@ const userSchema = new mongoose.Schema({
         unique: true,
         default: () => {
             return (
-                uuidv4() // asi se llama al token
+                Math.random().toString(36).substring(2, 15) +
+                Math.random().toString(36).substring(2, 15) +
+                Math.random().toString(36).substring(2, 15) +
+                Math.random().toString(36).substring(2, 15)
             );
         }
     },

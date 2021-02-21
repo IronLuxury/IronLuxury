@@ -1,32 +1,38 @@
+<div class="register__login">
+   <div class="login__box">
+      <h2>Login</h2>
+      <form action="/register" method="POST">
+         <div class="user__box">
+            <input type="text" name="name" required />
+            <label>Name</label>
+         </div>
+         <div class="user__box">
+            <input type="email" name="email"  required/>
+            <label>Email</label>
+         </div>
+         <div class="user__box">
+            <input type="password" name="password" required/>
+            <label>Password</label>
+         </div>
+         <div class="user__box">
+            <input type="text" name="dni" required/>
+            <label>DNI</label>
+         </div>
+         <div class="user__box">
+            <input type="text" name="phone" required/>
+            <label>Phone number</label>
+         </div>
 
-<form action="/register" method="POST" class="register">
-  
-   <label for="text" class="form-label">Name</label>
-    <input type="text" name="name" 
-    id="username" required>
-
-    <label for="email" class="form-label">Correo electrónico</label>
-    <input type="email" name="email"  class="form-control" 
-    id="email" required>
-  
-    <label for="password" class="form-label">Contraseña</label>
-    <input type="password" name="password"  id="password"
-    required>
-
-
-    <label for="text" class="form-label">DNI</label>
-    <input type="text" name="dni" 
-    id="dni" required>
-
-    <label for="text" class="form-label">Phone number</label>
-    <input type="number" name="phone" 
-     id="phone" required>
-
-     <button type="submit" >Enviar</button>
-
-
- 
-  
-
-  
-</form>
+         <button type="submit" class="btn__submit">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            Create account
+         </button>
+      {{#if errorMessage}}
+         <p class="error"> {{errorMessage}}</p>
+      {{/if}}
+      </form>
+   </div>
+</div>
