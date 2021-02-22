@@ -3,11 +3,12 @@
       <h2>Register</h2>
       <form action="/register" method="POST">
          <div class="user__box">
-            <input type="text" name="name" required />
+            <input type="text" name="name"  required />
+            
             <label>Name</label>
          </div>
          <div class="user__box">
-            <input type="email" name="email"  required/>
+            <input type="email" name="email" required/>
             <label>Email</label>
          </div>
          <div class="user__box">
@@ -15,11 +16,11 @@
             <label>Password</label>
          </div>
          <div class="user__box">
-            <input type="text" name="dni" required/>
+            <input type="text" name="dni"  required/>
             <label>DNI</label>
          </div>
          <div class="user__box">
-            <input type="text" name="phone" required/>
+            <input type="text" name="phone"  required/>
             <label>Phone number</label>
          </div>
 
@@ -30,6 +31,11 @@
             <span></span>
             Create account
          </button>
+
+               {{#if errors}}
+                <p class=“error”> {{error.message}}</p>
+               {{/if}}
+
       </form>
    </div>
 </div>
