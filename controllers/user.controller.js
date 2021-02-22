@@ -17,7 +17,7 @@ module.exports.doRegister = (req, res, next) => {
         .then((user) => {
             if (user) {
                 renderWithErrors({
-                    errorMessage: 'This email is already registered',
+                    message: 'This email is already registered',
                 });
             } else {
                 User.create(req.body)
