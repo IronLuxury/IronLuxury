@@ -19,13 +19,13 @@ module.exports.doRegister = (req, res, next) => {
         .then((user) => {
             if (user) {
                 renderWithErrors({
-                    message: 'This email is already registered',
+                    errors: 'This email is already registered',
                 });
             } else {
                 User.create(req.body)
                     .then((u) => {
                        sendActivationEmail(u.email, u.activationToken);
-                        res.redirect('/');
+                       res.redirect('/');
                     })
                     .catch((e) => {
                         if (e instanceof mongoose.Error.ValidationError) {
