@@ -9,6 +9,7 @@ router.get('/register', userController.register)
 router.post('/register', userController.doRegister)
 
 router.get('/login', userController.login)
+router.post('/login', userController.doLogin)
 router.get('/activate/:token', userController.activate)
 
 module.exports = router;
