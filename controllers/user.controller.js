@@ -43,6 +43,14 @@ module.exports.login = (req, res, next) => {
     res.render('users/login')
 }
 
+module.exports.doLogin = (req, res, next) => {
+    function renderWithErrors(e) {
+        res.render('users/login', {
+            error: e || 'El correo o la contraseña no son correctas'
+        })
+    }
+}
+
 module.exports.activate = (req, res, next) => {
     User.findOneAndUpdate(
         { activationToken: req.params.token, active: false },
