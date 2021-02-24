@@ -31,12 +31,6 @@ const userSchema = new mongoose.Schema(
         required : 'The phone number is mandatory'
         //TODO match regex of phone
     },
-    dni:{
-        type:String,
-        require:'DNI is necessary',
-        unique:true
-        //TODO Match regect of DNI
-    },
     active: {
         type: Boolean,
         default: false
