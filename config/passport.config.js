@@ -21,10 +21,24 @@ passport.use('local-auth', new LocalStrategy({
     usernameField: 'email',
     passwordField: 'password'
 }, (email, password, next) => {
-    User.findOne({email:email,email})
+    User.findOne({email:email})
         .then(user =>{
             if(!user){
-                next(null, false, {})
+                next(null, false, { error: 'El correo o la contraseña no son correctas'})
+            }else{
+                return user.checkPassword(password)
+                    .then(match => {
+                        if(match){
+                            if(user.active){
+                                next(null, user)
+                            }else{
+                                next(null, false, { error: 'Tienes que activar tu cuenta'})
+                            }
+                        }else{
+                            next(null, false, { error: 'El correo o la contraseña no son correctas' })
+                        }
+                    })
             }
         })
+        .catch(next)
 }))

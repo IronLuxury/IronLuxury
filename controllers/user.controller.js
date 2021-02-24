@@ -1,6 +1,7 @@
-const mongoose = require('mongoose')
-const User = require('../models/user.model')
+const mongoose = require('mongoose');
+const User = require('../models/user.model');
 const { sendActivationEmail } = require('../config/mailer.config');
+const passport = require('passport');
 
 module.exports.register = (req, res, next) => {
     res.render('users/register')
@@ -44,11 +45,20 @@ module.exports.login = (req, res, next) => {
 }
 
 module.exports.doLogin = (req, res, next) => {
-    function renderWithErrors(e) {
-        res.render('users/login', {
-            error: e || 'El correo o la contraseña no son correctas'
-        })
-    }
+   passport.authenticate('local-auth', (error, user, validations) => {
+       if(error){
+           console.log(error)
+           next(error)
+       }else if(!user){
+           console.log(validations.error)
+            res.status(400).render('users/login', {user: req.body, error: validations.error})
+       }else{
+           req.login(user, loginErr => {
+               if (loginErr) next(loginErr)
+               else res.redirect('/')
+           })
+       }
+   })(req, res, next);
 }
 
 module.exports.activate = (req, res, next) => {
