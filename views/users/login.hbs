@@ -1,29 +1,28 @@
-
 <div class="register__login">
-<div class="login__box">
-    <h2>Login</h2>
-    <form action="/login" method="POST">
-        <div class="user__box">
-            <input type="text" name="email" value="{{user.email}}" required>
-            <label>Email</label>
-        </div>
-        <div class="user__box">
-            <input type="password" name="password" value="{{user.password}}" required>
-            <label>Password</label>
-        </div>
+    <div class="login__box">
+        <h2>Login</h2>
+        <form action="/login" method="POST" autocomplete="off">
+            <div class="user__box">
+                <input type="text" name="email" value="{{user.email}}" required>
+                <label>Email</label>
+            </div>
+            <div class="user__box">
+                <input type="password" name="password" value="{{user.password}}" required>
+                <label>Password</label>
+            </div>
 
-        <a href="/authenticate/google"><img src="../img/google.png" alt="Google sign in" class="btn__google"></a>
+            <a href="/authenticate/google"><img src="../img/google.png" alt="Google sign in" class="btn__google"></a>
 
-        <button class="btn__submit" type="submit">
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            Login
-        </button>
-        {{#if message}}
-        <p class="ok__form">{{message}}</p>
-        {{/if}}
-    </form>
-</div>
+            <button class="btn__submit" type="submit">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                Login
+            </button>
+            {{#if message}}
+            <p class="ok__form">{{message}}</p>
+            {{/if}}
+        </form>
+    </div>
 </div>
