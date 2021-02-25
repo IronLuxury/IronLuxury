@@ -252,4 +252,17 @@ html {
     border: none;
     cursor:pointer;
     overflow: hidden;  
+    position: relative; 
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.btn__google{
+  height: 55px;
+  width: 65px;
+  position: relative; 
+  left: 50%;
+  transform: translateX(-50%);
+  display: block;
+
 }

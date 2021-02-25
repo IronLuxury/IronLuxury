@@ -10,12 +10,15 @@
             <input type="password" name="password" value="{{user.password}}" required>
             <label>Password</label>
         </div>
+
+        <a href="/authenticate/google"><img src="../img/google.png" alt="Google sign in" class="btn__google"></a>
+
         <button class="btn__submit" type="submit">
             <span></span>
             <span></span>
             <span></span>
             <span></span>
-            Sign in
+            Login
         </button>
         {{#if message}}
         <p class="ok__form">{{message}}</p>
