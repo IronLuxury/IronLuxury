@@ -138,7 +138,7 @@ html {
   text-transform: uppercase;
   overflow: hidden;
   transition: .5s;
-  margin-top: 40px;
+  margin-top: 30px;
   letter-spacing: 4px
 }
 
@@ -232,11 +232,17 @@ html {
   }
 }
 .error {
-  background: #f02b63;
   box-sizing: border-box;
-  color: #fff;
-  margin: 20px auto;
-  padding: 20px;
+  color: #f02b63;
+  margin-top: 20px;
+  width: 100%;
+  
+}
+
+.ok__form {
+  box-sizing: border-box;
+  color: #25d62e;
+  margin-top: 20px;
   width: 100%;
 }
 
@@ -246,4 +252,17 @@ html {
     border: none;
     cursor:pointer;
     overflow: hidden;  
+    position: relative; 
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.btn__google{
+  height: 55px;
+  width: 65px;
+  position: relative; 
+  left: 50%;
+  transform: translateX(-50%);
+  display: block;
+
 }

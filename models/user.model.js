@@ -24,16 +24,12 @@ const userSchema = new mongoose.Schema(
         type: String,
         required: 'The password is mandatory',
         unique: true,
-        match: [PASSWORD_PATTERN, "Your email does not meet the requirements"]
+        match: [PASSWORD_PATTERN, "Your password does not meet the requirements"]
     },
     phone:{
         type:String,
         required : 'The phone number is mandatory'
-    },
-    dni:{
-        type:String,
-        require:'DNI is necessary',
-        unique:true
+        //TODO match regex of phone
     },
     active: {
         type: Boolean,
