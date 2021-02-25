@@ -61,6 +61,21 @@ module.exports.doLogin = (req, res, next) => {
    })(req, res, next);
 }
 
+module.exports.doLoginGoogle = (req, res, next) => {
+    passport.authenticate('google-auth', (error, user, validations) => {
+      if (error) {
+        next(error);
+      } else if (!user) {
+        res.status(400).render('users/login', { user: req.body, error: validations });
+      } else {
+        req.login(user, loginErr => {
+          if (loginErr) next(loginErr)
+          else res.redirect('/')
+        })
+      }
+    })(req, res, next)
+  }
+
 module.exports.activate = (req, res, next) => {
     User.findOneAndUpdate(
         { activationToken: req.params.token, active: false },
