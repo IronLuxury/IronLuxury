@@ -3,7 +3,7 @@
         <h2>Login</h2>
         <form action="/login" method="POST">
             <div class="user__box">
-                <input type="text" name="email" value="{{user.email}}" required>
+                <input type="text" name="email" value="{{user.email}}" required autocomplete="off">
                 <label>Email</label>
             </div>
             <div class="user__box">
@@ -26,4 +26,4 @@
             {{/if}}
         </form>
     </div>
-</div>
+</div>      

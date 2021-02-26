@@ -16,8 +16,8 @@ router.get('/register', secure.isNotAuthenticated, userController.register)
 router.post('/register', secure.isNotAuthenticated, userController.doRegister)
 router.get('/login', secure.isNotAuthenticated, userController.login)
 router.post('/login', secure.isNotAuthenticated, userController.doLogin)
-router.get('/logout', secure.isAuthenticated, userController.logout)
 
+router.post('/logout', secure.isAuthenticated, userController.logout)
 router.get('/profile', secure.isAuthenticated, userController.profile)
 router.get('/activate/:token', secure.isNotAuthenticated, userController.activate)
 
