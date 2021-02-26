@@ -90,3 +90,12 @@ module.exports.activate = (req, res, next) => {
         })
         .catch((e) => next(e));
 }
+
+module.exports.profile = (req, res, next) => {
+    res.render('users/profile')
+}
+
+module.exports.logout = (req, res, next) => {
+    req.session.destroy()
+    res.redirect('/')
+}

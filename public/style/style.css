@@ -44,7 +44,6 @@ html {
     display: inline-block;
     line-height: 80px;
     margin: 0 33px;
-
 }
 
 .nav__bar ul, li, a{
@@ -57,9 +56,24 @@ html {
   color: var(--c-primary);
 }
 .nav__right{
-     float: right;
+    float: right;
     padding: 0 20px;
     margin-right:20px;
+}
+
+.btn__logout{
+  float: right;
+  font-size: 18px;
+  color: rgb(255, 255, 255);
+  background-color: #1A1A1A;
+  text-decoration: none;
+  border: none;
+  margin-top: 25px;
+  margin-right: 5%;
+}
+
+.btn__logout:hover{
+  color: var(--c-primary);
 }
 
 /*FORM*/

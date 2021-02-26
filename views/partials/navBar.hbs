@@ -7,10 +7,20 @@
         <li><a href="#">Business</a></li>
         <li><a href="#">Contact us</a></li>
     </ul>
+    {{#if currentUser}}
+    <form action="/logout" method="POST">
+        <button class="btn__logout">Logout</button>
+    </form>
+    <ul class="nav__right">
+        <li><a href="/profile">Profile</a></li>
+    </ul>
+    {{else}}
+
     <ul class="nav__right">
         <li><a href="/register">Sign Up</a></li>
         <li><a href="/login">Login</a></li>
     </ul>
+    {{/if}}
     </nav>
 
 </header>
