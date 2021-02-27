@@ -1,4 +1,4 @@
-let cars = [
+const cars = [
 
     {
         brand: 'Aston Martin',
@@ -108,4 +108,4 @@ let cars = [
     }
 ]
 
-
+module.exports = cars
