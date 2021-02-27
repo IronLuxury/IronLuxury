@@ -9,7 +9,6 @@ module.exports.register = (req, res, next) => {
 
 module.exports.doRegister = (req, res, next) => {
     function renderWithErrors(errors) {
-        console.log(errors)
         res.status(400).render('users/register', {
             errors: errors,
             user: req.body,
@@ -25,14 +24,14 @@ module.exports.doRegister = (req, res, next) => {
             } else {
                 User.create(req.body)
                     .then((u) => {
-                       sendActivationEmail(u.email, u.activationToken);
+                        sendActivationEmail(u.email, u.activationToken);
                        res.redirect('/');
                     })
                     .catch((e) => {
                         if (e instanceof mongoose.Error.ValidationError) {
                             renderWithErrors(e.errors);
                         } else {
-                            next(e);
+                             next(e);
                         }
                     });
             }
@@ -50,7 +49,6 @@ module.exports.doLogin = (req, res, next) => {
            console.log(error)
            next(error)
        }else if(!user){
-           console.log(validations.error)
             res.status(400).render('users/login', {user: req.body, error: validations.error})
        }else{
            req.login(user, loginErr => {
@@ -62,15 +60,16 @@ module.exports.doLogin = (req, res, next) => {
 }
 
 module.exports.doLoginGoogle = (req, res, next) => {
+    console.log('entra')
     passport.authenticate('google-auth', (error, user, validations) => {
       if (error) {
         next(error);
       } else if (!user) {
-        res.status(400).render('users/login', { user: req.body, error: validations });
+            res.status(400).render('users/login', { user: req.body, error: validations });
       } else {
-        req.login(user, loginErr => {
-          if (loginErr) next(loginErr)
-          else res.redirect('/')
+            req.login(user, loginErr => {
+                if (loginErr) next(loginErr)
+                else res.redirect('/')
         })
       }
     })(req, res, next)
