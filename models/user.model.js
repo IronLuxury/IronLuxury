@@ -9,13 +9,11 @@ const userSchema = new mongoose.Schema(
     name: {
         type: String,
         required: 'The name is mandatory',
-        unique: true,
         trim: true
     },
     email: {
         type: String,
         required: 'The email is mandatory',
-        unique: true,
         lowercase: true,
         match: [EMAIL_PATTERN, 'Invalid email address'],
         trim: true
