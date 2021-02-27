@@ -8,7 +8,11 @@ const userSchema = new mongoose.Schema(
     {
     name: {
         type: String,
+<<<<<<< HEAD
+        //required: 'The name is mandatory',
+=======
         required: 'The name is mandatory',
+>>>>>>> 9d22de3cdcea634783ddd342d2a3b60b7ffebac9
         trim: true
     },
     email: {
@@ -21,17 +25,19 @@ const userSchema = new mongoose.Schema(
     password: {
         type: String,
         required: 'The password is mandatory',
-        unique: true,
         match: [PASSWORD_PATTERN, "Your password does not meet the requirements"]
     },
     phone:{
         type:String,
-        required : 'The phone number is mandatory'
+        //required : 'The phone number is mandatory'
         //TODO match regex of phone
     },
     active: {
         type: Boolean,
         default: false
+    },
+    social:{
+        google:String
     },
     activationToken: {
         type: String,

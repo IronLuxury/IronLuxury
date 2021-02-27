@@ -59,6 +59,7 @@ passport.use('google-auth', new GoogleStrategy({
         { 'social.google': googleID }
       ]})
       .then(user => {
+        console.log('entra',user)
         if (!user) {
           const newUserInstance = new User({
             email,
@@ -75,7 +76,10 @@ passport.use('google-auth', new GoogleStrategy({
           next(null, user)
         }
       })
-      .catch(next)
+      .catch((error)=>{
+        console.log(error)
+        next(error)
+      })
     } else {
       next(null, null, { error: 'Error conectando con Google OAuth' })
     }

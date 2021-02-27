@@ -11,12 +11,14 @@ router.get('/', indexController.home)
 
 //Users
 router.get('/authenticate/google', passport.authenticate('google-auth', { scope: GOOGLE_SCOPES }))
-router.get('authenticate/google/cb',userController.doLoginGoogle)
+router.get('/authenticate/google/cb',userController.doLoginGoogle)
 
 router.get('/register', secure.isNotAuthenticated, userController.register)
 router.post('/register', secure.isNotAuthenticated, userController.doRegister)
 router.get('/login', secure.isNotAuthenticated, userController.login)
 router.post('/login', secure.isNotAuthenticated, userController.doLogin)
+
+
 
 router.post('/logout', secure.isAuthenticated, userController.logout)
 router.get('/profile', secure.isAuthenticated, userController.profile)
