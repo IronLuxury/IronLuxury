@@ -6,7 +6,7 @@
   "scripts": {
     "start": "nodemon app.js",
     "dev": "nodemon -e hbs,js,css app.js",
-    "seeds": "./bin/seeds.js"
+    "seeds": "node ./bin/seeds.js"
   },
   "repository": {
     "type": "git",

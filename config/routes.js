@@ -2,6 +2,7 @@ const passport = require('passport')
 const router = require('express').Router();
 const indexController = require('../controllers/index.controller')
 const userController = require('../controllers/user.controller')
+const carsController = require('../controllers/car.controller')
 const secure = require("../middlewares/secure.middleware");
 const GOOGLE_SCOPES = ['https://www.googleapis.com/auth/userinfo.email', 'https://www.googleapis.com/auth/userinfo.profile']
 
@@ -20,5 +21,8 @@ router.post('/login', secure.isNotAuthenticated, userController.doLogin)
 router.post('/logout', secure.isAuthenticated, userController.logout)
 router.get('/profile', secure.isAuthenticated, userController.profile)
 router.get('/activate/:token', secure.isNotAuthenticated, userController.activate)
+
+router.get('/rent', carsController.rent)
+router.get('/detail/:id', carsController.detail)
 
 module.exports = router;
