@@ -1,0 +1,19 @@
+<div class="register__login">
+    <div class="login__box">
+        <h2>Reserve</h2>
+        <form action="/reservation/{{id}}" method="POST" autocomplete="off">
+            <input type="date" name="dateReserve" class="date__reserve" required>
+            <div class="user__box">
+                <input type="text" name="phone" value="" required>
+                <label>Phone number</label>
+            </div>
+            <button type="submit" class="btn__submit" style="margin-bottom:5px">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                Reserve
+            </button>
+        </form>
+    </div>
+</div>

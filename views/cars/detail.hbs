@@ -1,16 +1,16 @@
 <div class="container my-5">
     <div class="row justify-content-center">
-        <div class="col-sm-2">
+        <div class="col">
             <img src="{{image}}" class="image__movie" alt="{{brand}}">
         </div>
-        <div class="col-sm-8 des__movie">
+        <div class="col des__movie">
             <h1>{{brand}}</h1>
             <p class="mt-4">            
-            <h5>Max Power: {{maxPower}}</h5>
-            <h4>Model: {{model}}</h4>
+            <h4>Max Power: {{maxPower}}</h4>
+            <h5>Model: {{model}}</h5>
             </p>
 
-            <a href="/rent" class="btn btn-back">Go back</a>
+            <a href="/reservation/{{_id}}" class="btn btn__reserve">Reserve</a>
         </div>
     </div>
 </div>
