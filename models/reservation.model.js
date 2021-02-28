@@ -1,14 +1,18 @@
 const mongoose = require('mongoose')
-const Car = require('../models/car.model')
-const User = require('../models/user.model')
+const Car = require('./car.model')
+const User = require('./user.model')
 
-const reserveScheme = new mongoose.Schema(
+const reservationScheme = new mongoose.Schema(
     {
     dateReserve: {
         type:Date,
         require:true,
         unique: true
         //TODO MENSAJE DE ERROR
+    },
+    phone:{
+        type:Number,
+        require:true
     },    
     user:{
         type: mongoose.SchemaTypes.ObjectId,
@@ -28,5 +32,5 @@ const reserveScheme = new mongoose.Schema(
     }}
 )
 
-const Reserve = mongoose.model('Reserve', reserveScheme)
-module.exports = Reserve
+const Reservation = mongoose.model('Reservation', reservationScheme)
+module.exports = Reservation

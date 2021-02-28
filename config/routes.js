@@ -18,13 +18,14 @@ router.post('/register', secure.isNotAuthenticated, userController.doRegister)
 router.get('/login', secure.isNotAuthenticated, userController.login)
 router.post('/login', secure.isNotAuthenticated, userController.doLogin)
 
-
-
 router.post('/logout', secure.isAuthenticated, userController.logout)
 router.get('/profile', secure.isAuthenticated, userController.profile)
 router.get('/activate/:token', secure.isNotAuthenticated, userController.activate)
 
 router.get('/rent', carsController.rent)
 router.get('/detail/:id', carsController.detail)
+
+router.get('/reservation/:id', carsController.reserve)
+router.post('/reservation/:id', carsController.doReserve)
 
 module.exports = router;
