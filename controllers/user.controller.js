@@ -22,18 +22,25 @@ module.exports.doRegister = (req, res, next) => {
                     errors: 'This email is already registered',
                 });
             } else {
-                User.create(req.body)
-                    .then((u) => {
-                        sendActivationEmail(u.email, u.activationToken);
-                       res.redirect('/');
-                    })
-                    .catch((e) => {
-                        if (e instanceof mongoose.Error.ValidationError) {
-                            renderWithErrors(e.errors);
-                        } else {
-                             next(e);
-                        }
+                const {name, email, password, repeatPassword} = req.body
+                if (password === repeatPassword){
+                    User.create({name, email, password})
+                        .then((u) => {
+                            sendActivationEmail(u.email, u.activationToken);
+                           res.redirect('/');
+                        })
+                        .catch((e) => {
+                            if (e instanceof mongoose.Error.ValidationError) {
+                                renderWithErrors(e.errors);
+                            } else {
+                                 next(e);
+                            }
+                        });
+                }else{
+                    renderWithErrors({
+                        errors: 'Passwords are not same',
                     });
+                }
             }
         })
         .catch((e) => next(e));
@@ -46,7 +53,6 @@ module.exports.login = (req, res, next) => {
 module.exports.doLogin = (req, res, next) => {
    passport.authenticate('local-auth', (error, user, validations) => {
        if(error){
-           console.log(error)
            next(error)
        }else if(!user){
             res.status(400).render('users/login', {user: req.body, error: validations.error})
@@ -60,7 +66,6 @@ module.exports.doLogin = (req, res, next) => {
 }
 
 module.exports.doLoginGoogle = (req, res, next) => {
-    console.log('entra')
     passport.authenticate('google-auth', (error, user, validations) => {
       if (error) {
         next(error);
@@ -84,7 +89,7 @@ module.exports.activate = (req, res, next) => {
             if (u) {
                 res.render('users/login', { user: req.body, message: 'Your account is activated' })
             } else {
-                res.redirect("/")
+                res.redirect('/')
             }
         })
         .catch((e) => next(e));

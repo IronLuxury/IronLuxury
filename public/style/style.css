@@ -249,14 +249,16 @@ html {
   box-sizing: border-box;
   color: #f02b63;
   margin-top: 20px;
+  text-align: center;
   width: 100%;
   
 }
 
 .ok__form {
   box-sizing: border-box;
-  color: #25d62e;
+  color: #25d62e; 
   margin-top: 20px;
+  text-align: center;
   width: 100%;
 }
 
@@ -273,10 +275,31 @@ html {
 
 .btn__google{
   height: 55px;
-  width: 65px;
+  width: 60px;
   position: relative; 
   left: 50%;
   transform: translateX(-50%);
   display: block;
-
 }
+
+/*CAR DETAIL*/
+.image__movie{
+  height: 22em;
+}
+
+.btn__reserve{
+  background-color: var(--c-primary);
+}
+
+/*RESERVE FORM*/
+.date__reserve{
+  background-color: Transparent;
+  background-repeat:no-repeat;
+  border: none;
+  cursor:pointer;
+  overflow: hidden;
+  color: #fff;
+  margin-bottom: 20px;
+}
+
+

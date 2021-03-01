@@ -59,7 +59,6 @@ passport.use('google-auth', new GoogleStrategy({
         { 'social.google': googleID }
       ]})
       .then(user => {
-        console.log('entra',user)
         if (!user) {
           const newUserInstance = new User({
             email,
@@ -77,7 +76,6 @@ passport.use('google-auth', new GoogleStrategy({
         }
       })
       .catch((error)=>{
-        console.log(error)
         next(error)
       })
     } else {
