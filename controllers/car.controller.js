@@ -26,7 +26,7 @@ module.exports.doReserve = (req, res, next) => {
     const carID = req.params.id
     const userID = req.currentUser.id
 
-    Reservation.create({dateReserve, phone, userID, carID})
+    Reservation.create({dateReserve, phone, user:userID, car:carID})
         .then((r) => {
             res.redirect('/rent')
             console.log('Reservation created', r)
