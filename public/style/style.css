@@ -302,4 +302,44 @@ html {
   margin-bottom: 20px;
 }
 
+/*CAROUSEL*/
+.carousel-caption{padding-bottom:80px;}
 
+h2{font-size: 60px;}
+
+p{padding:10px}
+
+.fill {
+    width: 230px;
+    height: 100%;
+    background-position: center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+}
+
+/**
+ * Button
+ */
+.btn-transparent {
+  background: transparent;
+  color: #fff;
+  border: 2px solid #fff;
+}
+.btn-transparent:hover {
+  background-color: #fff;
+}
+
+.btn-rounded {
+  border-radius: 70px;
+}
+
+.btn-large {
+  padding: 11px 45px;
+  font-size: 18px;
+}
+
+/**
+ * Change animation duration
+ */
