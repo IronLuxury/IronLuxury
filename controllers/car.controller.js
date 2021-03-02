@@ -1,6 +1,8 @@
 const mongoose = require('mongoose');
 const Car = require('../models/car.model')
 const Reservation = require('../models/reservation.model')
+const {sendRent} = require('../config/mailer.config')
+const flash = require('connect-flash')
 
 module.exports.rent = (req, res, next) => {
     Car.find({})
@@ -25,13 +27,16 @@ module.exports.doReserve = (req, res, next) => {
     const {dateReserve, phone } = req.body
     const carID = req.params.id
     const userID = req.currentUser.id
+    const email = req.currentUser.email
 
     Reservation.create({dateReserve, phone, user:userID, car:carID})
         .then((r) => {
+            sendRent(email)
+            req.flash('flashMessage','Your reserve has been successfully completed!')
             res.redirect('/rent')
             console.log('Reservation created', r)
         })
-        .catch((e) => {
+        .catch((e) => {console.log(e)
             next(e)
         });
 }

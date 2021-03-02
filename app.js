@@ -6,6 +6,7 @@ const routes = require("./config/routes.js");
 const hbs = require('hbs');
 const passport = require('passport');
 const session = require('./config/session.config');
+const flash = require('connect-flash')
 
 require("./config/db.config");
 require("./config/passport.config");
@@ -17,6 +18,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.static("public"));
 app.use(logger("dev"));
 
+
 // Session config
 app.use(session)
 app.use(passport.initialize())
@@ -26,11 +28,14 @@ app.use(passport.session())
 app.set("views", __dirname + "/views");
 app.set("view engine", "hbs");
 hbs.registerPartials(__dirname + '/views/partials')
+app.use(flash())
 
 // Session User
 app.use((req, res, next) => {
     req.currentUser = req.user;
     res.locals.currentUser = req.user
+
+    //res.locals.flashMessage = req.flash('flashMessage')
     next()
 })
 

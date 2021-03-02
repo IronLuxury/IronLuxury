@@ -1,5 +1,6 @@
 const nodemailer = require('nodemailer')
 const { generateTemplate } = require('./mailtemplate.js')
+const { reserveTemplate } = require('./reserve.template.js')
 
 const transporter = nodemailer.createTransport({
     service: "Gmail",
@@ -15,5 +16,14 @@ module.exports.sendActivationEmail = (email, token) => {
         to: email,
         subject: 'Thanks for joining us!',
         html: generateTemplate(email, token)
+    })
+}
+
+module.exports.sendRent = (email) => {
+    transporter.sendMail({
+        from: `"IronLuxury" <${process.env.NM_USER}>`,
+        to: email,
+        subject: 'Your reserve has been successfully completed!',
+        html: reserveTemplate(email)
     })
 }
