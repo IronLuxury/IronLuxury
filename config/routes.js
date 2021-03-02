@@ -22,7 +22,8 @@ router.post('/logout', secure.isAuthenticated, userController.logout)
 router.get('/profile', secure.isAuthenticated, userController.profile)
 router.get('/activate/:token', secure.isNotAuthenticated, userController.activate)
 
-
+router.get('/rent', carsController.rent)
+router.get('/detail/:id', carsController.detail)
 
 router.get('/reservation/:id', carsController.reserve)
 router.post('/reservation/:id', carsController.doReserve)
