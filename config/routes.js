@@ -2,6 +2,7 @@ const passport = require('passport')
 const router = require('express').Router();
 const indexController = require('../controllers/index.controller')
 const userController = require('../controllers/user.controller')
+const carsController = require('../controllers/car.controller')
 const secure = require("../middlewares/secure.middleware");
 const GOOGLE_SCOPES = ['https://www.googleapis.com/auth/userinfo.email', 'https://www.googleapis.com/auth/userinfo.profile']
 
