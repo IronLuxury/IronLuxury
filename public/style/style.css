@@ -303,43 +303,27 @@ html {
 }
 
 /*CAROUSEL*/
-.carousel-caption{padding-bottom:80px;}
-
-h2{font-size: 60px;}
-
-p{padding:10px}
-
-.fill {
-    width: 230px;
-    height: 100%;
-    background-position: center;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    background-size: cover;
-    -o-background-size: cover;
+.title__carousel{
+  font-size: 60px;
 }
 
-/**
- * Button
- */
-.btn-transparent {
-  background: transparent;
-  color: #fff;
-  border: 2px solid #fff;
+.carousel__description{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
+
+ .btn__carousel{
+   background: transparent;
+   color: #fff;
+   border: 2px solid #fff;
+   border-radius: 70px;
+   padding: 11px 45px;
+   font-size: 18px;
+   margin-top: 4.5em;
+ }
+
 .btn-transparent:hover {
   background-color: #fff;
 }
-
-.btn-rounded {
-  border-radius: 70px;
-}
-
-.btn-large {
-  padding: 11px 45px;
-  font-size: 18px;
-}
-
-/**
- * Change animation duration
- */

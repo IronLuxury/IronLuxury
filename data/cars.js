@@ -1,21 +1,23 @@
 const cars = [
 
     {
-        brand: 'Aston Martin',
-        model: 'Superleggera',
+        brand: 'Lamborghini',
+        model: 'Huracán EVO',
         topSpeed: 340,
         maxPower: 725,
         engineSize: 5200,
-        image: 'https://cdn.drivek.it/configurator-covermobile/cars/es/$original$/ASTON-MARTIN/DBS-SUPERLEGGERA/38826_COUPE-2-DOORS/aston-martin-dbs-superleggera-2018-cover-mobile.jpg'
+        price: 1200,
+        image: 'https://res.cloudinary.com/dxo4hpxro/image/upload/v1614723704/cars/hucaran-evo_kepp2b.jpg'
     },
 
     {
-        brand: 'Mercedes',
-        model: 'AMG GT',
-        topSpeed: 310,
-        maxPower: 510,
-        engineSize: 4000,
-        image: 'https://www.coches.com/fotos_historicas/amg/Mercedes-GT-2015/amg_mercedes-gt-2015_r45.jpg'
+        brand: 'Chevrolet',
+        model: 'Camaro',
+        topSpeed: 331,
+        maxPower: 620,
+        engineSize: 5200,
+        price: 600,
+        image: 'https://res.cloudinary.com/dxo4hpxro/image/upload/v1614724133/cars/chevrolet-camaro_icp9bs.jpg'
     },
 
     {
@@ -24,43 +26,48 @@ const cars = [
         topSpeed: 340,
         maxPower: 1000,
         engineSize: 4000,
-        image: 'https://noticias.coches.com/wp-content/uploads/2020/11/Ferrari-SF90-Spider-2021-3.jpeg'
+        price: 1100,
+        image: 'https://res.cloudinary.com/dxo4hpxro/image/upload/v1614723703/cars/ferrari-f8_lhxvgm.jpg'
+    },
+    {
+        brand: 'Audi',
+        model: 'R8',
+        topSpeed: 310,
+        maxPower: 510,
+        engineSize: 4000,
+        price: 650,
+        image: 'https://res.cloudinary.com/dxo4hpxro/image/upload/v1614723705/cars/audi-r8-1_vutfv6.jpg'
+    },
+
+    {
+        brand: 'Mclaren',
+        model: '570S COUPÉ',
+        topSpeed: 380,
+        maxPower: 1500,
+        engineSize: 8000,
+        price: 1000,
+        image: 'https://res.cloudinary.com/dxo4hpxro/image/upload/v1614723705/cars/mclare-ms500-coupe_dau1hg.jpg'
     },
 
     {
         brand: 'Bugatti',
-        model: 'Divo',
-        topSpeed: 380,
-        maxPower: 1500,
-        engineSize: 8000,
-        image: 'https://noticias.coches.com/wp-content/uploads/2018/08/bugatti-divo-3.jpg'
-    },
-
-    {
-        brand: 'Lamborghini',
-        model: 'Huracan',
+        model: 'Divo 3',
         topSpeed: 325,
         maxPower: 640,
         engineSize: 5200,
-        image: 'https://noticias.coches.com/wp-content/uploads/2019/01/lamborghini-huracan-evo-2019-4.jpg'
+        price: 1500,
+        image: 'https://res.cloudinary.com/dxo4hpxro/image/upload/v1614723705/cars/bugatti-divo-3_eogt7q.jpg'
     },
 
-    {
-        brand: 'Audi',
-        model: 'R8',
-        topSpeed: 331,
-        maxPower: 620,
-        engineSize: 5200,
-        image: 'https://noticias.coches.com/wp-content/uploads/2018/10/Audi-R8-2019-8.jpg'
-    },
 
     {
         brand: 'Porche',
-        model: 'Targa',
+        model: '911 Turbo',
         topSpeed: 289,
         maxPower: 385,
         engineSize: 3000,
-        image: 'https://noticias.coches.com/wp-content/uploads/2020/05/Porsche-911-Targa-2020-2.jpeg'
+        price: 500,
+        image: 'https://res.cloudinary.com/dxo4hpxro/image/upload/v1614723705/cars/porche_mu8bil.jpg'
     },
 
     {
@@ -69,42 +76,56 @@ const cars = [
         topSpeed: 280,
         maxPower: 529,
         engineSize: 4000,
-        image: 'https://noticias.coches.com/wp-content/uploads/2020/04/Bentley-Continental-GT-Convertible-2012-13.jpg'
+        price: 450,
+        image: 'https://res.cloudinary.com/dxo4hpxro/image/upload/v1614723704/cars/bentley-continental_zpasbk.jpg'
     },
 
     {
         brand: 'BMW',
-        model: '650',
+        model: 'M4 Cabrio',
         topSpeed: 250,
         maxPower: 450,
         engineSize: 3500,
-        image: 'https://noticias.coches.com/wp-content/uploads/2014/12/BMW-Serie-6-Gran-Coupe-2014-11-650x433.jpg'
+        price: 700,
+        image: 'https://res.cloudinary.com/dxo4hpxro/image/upload/v1614723824/cars/bmw-cabrio_gh0zud.jpg'
     },
 
     {
         brand: 'Maserati',
-        model: 'Gran Turismo',
+        model: 'Ghibli',
         topSpeed: 301,
         maxPower: 460,
         engineSize: 4700,
-        image: 'https://noticias.coches.com/wp-content/uploads/2017/06/maserati-granturismo-2018.jpg'
+        price: 1050,
+        image: 'https://res.cloudinary.com/dxo4hpxro/image/upload/v1614723704/cars/maserati-ghibli_xlnaxc.jpg'
     },
 
     {
-        brand: 'Aston Martin',
-        model: 'Vanquish',
+        brand: 'Mercedez',
+        model: 'AMG GT',
         topSpeed: 295,
         maxPower: 565,
         engineSize: 5935,
-        image: 'https://noticias.coches.com/wp-content/uploads/2012/06/Aston_Martin_Vanquish_01.jpg'
+        price: 800,
+        image: 'https://res.cloudinary.com/dxo4hpxro/image/upload/v1614723704/cars/mercedes-gt-45_ybvfkc.jpg'
     },
     {
-        brand: 'Aston Martin2',
+        brand: 'Aston Martin',
         model: 'Superleggera',
         topSpeed: 340,
         maxPower: 725,
         engineSize: 5200,
-        image: 'https://cdn.drivek.it/configurator-covermobile/cars/es/$original$/ASTON-MARTIN/DBS-SUPERLEGGERA/38826_COUPE-2-DOORS/aston-martin-dbs-superleggera-2018-cover-mobile.jpg'
+        price: 900,
+        image: 'https://res.cloudinary.com/dxo4hpxro/image/upload/v1614723704/cars/aston-martin-supperleggera_ffwpqu.webp'
+    },
+    {
+        brand: 'Audi',
+        model: 'R8 Spyder',
+        topSpeed: 310,
+        maxPower: 510,
+        engineSize: 4000,
+        price: 750,
+        image: 'https://res.cloudinary.com/dxo4hpxro/image/upload/v1614723685/cars/audi-r8_dp4vnd.jpg'
     }
 ]
 

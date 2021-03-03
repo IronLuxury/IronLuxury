@@ -21,6 +21,10 @@ const carScheme = new mongoose.Schema({
         type: Number,
         require: true
     },
+    price:{
+        type:Number,
+        require:true
+    },
     image:{
         type: String,
         validate: {

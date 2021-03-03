@@ -32,6 +32,7 @@ module.exports.doReserve = (req, res, next) => {
             console.log('Reservation created', r)
         })
         .catch((e) => {
+            console.log(e)
             next(e)
         });
 }

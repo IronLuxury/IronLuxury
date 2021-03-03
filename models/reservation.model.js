@@ -6,9 +6,7 @@ const reservationScheme = new mongoose.Schema(
     {
     dateReserve: {
         type:Date,
-        require:true,
-        unique: true
-        //TODO MENSAJE DE ERROR
+        require:true
     },
     phone:{
         type:Number,
