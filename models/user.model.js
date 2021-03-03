@@ -22,6 +22,16 @@ const userSchema = new mongoose.Schema(
         required: 'The password is mandatory',
         match: [PASSWORD_PATTERN, "Your password does not meet the requirements"]
     },
+    image:{
+        type: String,
+        validate: {
+            validator: (text) => {
+                return text.startsWith('http');
+            },
+            message: 'URL must start with HTTP/HTTPS'
+        },
+        
+    },
     active: {
         type: Boolean,
         default: false
