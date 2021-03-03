@@ -2,6 +2,7 @@ const mongoose = require('mongoose');
 const User = require('../models/user.model');
 const { sendActivationEmail } = require('../config/mailer.config');
 const passport = require('passport');
+const flash = require('connect-flash')
 
 module.exports.register = (req, res, next) => {
     res.render('users/register')
@@ -26,8 +27,10 @@ module.exports.doRegister = (req, res, next) => {
                 if (password === repeatPassword){
                     User.create({name, email, password})
                         .then((u) => {
-                            sendActivationEmail(u.email, u.activationToken);
+                           sendActivationEmail(u.email, u.activationToken);
+                           req.flash('flashMessage','Your registration was successful')
                            res.redirect('/');
+                          
                         })
                         .catch((e) => {
                             if (e instanceof mongoose.Error.ValidationError) {
