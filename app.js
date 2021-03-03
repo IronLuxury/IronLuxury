@@ -35,7 +35,7 @@ app.use((req, res, next) => {
     req.currentUser = req.user;
     res.locals.currentUser = req.user
 
-    //res.locals.flashMessage = req.flash('flashMessage')
+    res.locals.flashMessage = req.flash('flashMessage')
     next()
 })
 
