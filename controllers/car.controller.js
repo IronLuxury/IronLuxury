@@ -36,7 +36,8 @@ module.exports.doReserve = (req, res, next) => {
             res.redirect('/rent')
             console.log('Reservation created', r)
         })
-        .catch((e) => {console.log(e)
+        .catch((e) => {
+            console.log(e)
             next(e)
         });
 }
