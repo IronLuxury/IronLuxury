@@ -4,7 +4,7 @@ setTimeout(()=> {
     
     toasts.forEach(toast => {
         new bootstrap.Toast(toast).hide()
-},4000)
+    })
 
-})
+}, 4000)
 
