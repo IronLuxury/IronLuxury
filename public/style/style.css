@@ -1,14 +1,15 @@
 :root{
-   --c-primary:#f48403;
-   /*#03e9f4*/
+  --c-primary:#f48403;
+  --c-card-background: #3A3F42;
 }
 html {
   height: 100%;
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+/*@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');*/
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
 *{
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Lato', sans-serif;
     margin: 0;
     padding: 0;
 }
@@ -328,7 +329,6 @@ html {
   background-color: #fff;
 }
 
-
 /*Profle*/
 .padding {
   padding: 3rem !important
@@ -459,3 +459,91 @@ h6 {
   -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out
 }
+/*INDEX*/
+.index__info{
+  margin-top: 100px;
+}
+
+.index__car{
+  margin-top: 50px;
+}
+
+.info__image__left{
+  width: 580px;
+  height: 300px;
+  margin-bottom: 10px;
+}
+
+.info__image__right{
+  width: 280px;
+  margin: 5px;
+}
+.popular__car{
+   margin-top: 50px;
+   text-transform: uppercase;
+}
+
+.title__popular{
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+  text-transform: uppercase;
+}
+
+hr{
+  width: 100%;
+  border: 1px solid #000;
+}
+/*CARD - CARS*/
+.card__img{
+  margin-bottom: 10px;
+}
+
+.card__body{
+  background-color: var(--c-card-background);
+  color: #fff;
+  display: flex;
+	flex-direction: row;
+  flex-wrap: wrap;
+	justify-content: space-between;
+	align-items: flex-start;
+}
+
+.card__title{
+  font-size: 16px;
+  margin: 7px;
+}
+
+.price{
+  float: right;
+  width: 80px; 
+  height: 30px; 
+  background: #000;
+  color: #fff;
+  transform: skew(-15deg);  
+  padding: 3px;
+  text-align: center;
+  margin-left: 45px;
+}
+
+.div__bottom{
+  height: 50px;
+  width: 100%;
+  border-top: 1px solid #C9C9C9 ;
+  margin-top: 20px;
+}
+
+.card__title__bottom{
+  font-size: 16px;
+  margin-top: 15px;
+  margin-left: 5px;
+}
+
+.ico__wheel{
+  padding-bottom: 5px;
+  margin-right: 6px ;
+}
+.raise:hover,
+.raise:focus {
+  box-shadow: 0 0.10em 0.5em -0.4em;
+  transform: translateY(-0.2em);
