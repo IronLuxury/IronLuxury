@@ -25,7 +25,7 @@ router.get('/activate/:token', secure.isNotAuthenticated, userController.activat
 router.get('/rent', carsController.rent)
 router.get('/detail/:id', carsController.detail)
 
-router.get('/reservation/:id', carsController.reserve)
-router.post('/reservation/:id', carsController.doReserve)
+router.get('/reservation/:id', secure.isAuthenticated, carsController.reserve)
+router.post('/reservation/:id', secure.isAuthenticated, carsController.doReserve)
 
 module.exports = router;
