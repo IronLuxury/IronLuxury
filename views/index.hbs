@@ -1,1 +1,69 @@
 {{>carousel cars}}
+
+<div class="container">
+    <div class="index__info">
+        <div class="row">
+            <div class="col">
+                <h1><span style="color:#f48403">IronLuxury</span> car rental in Spain</h1>
+                <p>IronLuxury offers you a luxury car rental in Europe, whether for business or pleasure. With a wide catalog of cars and
+                models, including sports cars, minivans, prestige, convertibles, we have the most adjusted prices in the market. We
+                adapt to every budget. With more than 10 years of experience in the luxury car rental industry.<br/></p>
+                
+                <p> IronLuxury Car Rental you can enjoy a unique luxury experience, through a professional service with a lot of
+                passion, knowledge and a fleet of vehicles, to provide the best luxury car rental service in Europe. If you need to
+                reserve a vehicle quickly, for the same day or for a specific date, you can send us the reservation request instantly.
+                Our agents can work to ensure that we have the most experience possible and get in touch with all the details as soon as
+                possible.<br/></p>
+                
+                <p> IronLuxury we are always there for you, we speak your language and help you choose the right car for your luxury and
+                sports car rental experience. IronLuxury offers you premium, upscale service and cars that you will never forget. Let us
+                help you find your own car rental in Europe with IronLuxury.</p>
+            </div>
+
+            <div class="col">
+                <img src="https://images.unsplash.com/photo-1605557626697-2e87166d88f9?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=2250&q=80" class="info__image__left" alt="info__image">
+                <div>
+                    <img src="https://images.unsplash.com/photo-1432462770865-65b70566d673?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=2250&q=80" class="info__image__right" alt="lamborghini">
+                    <img src="https://images.unsplash.com/photo-1527247043589-98e6ac08f56c?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=2250&q=80" class="info__image__right" alt="lamborghini">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <section class="popular__car">
+        <div class="index__info">
+            <h1 class="title__popular">The most popular cars</h1>
+            <hr>
+        </div>
+        <div class="index__car">
+            <div class="row">
+                {{#each cars}}
+                <div class="col">
+                    <div class="card" style="border: none;"> 
+                        <a href="/detail/{{_id}}" class="raise">
+                            <div class="card__img">
+                                <img src="{{this.image}}" class="card-img-top card__img__top" alt="...">
+                            </div>
+                            <div class="card-body card__body">
+                                <div class="div__title">
+                                    <h5 class="card-title card__title">{{this.brand}} {{this.model}}</h5>
+                                </div>
+                                <div class="div__price">
+                                    <div class="price">{{this.price}}€</div>
+                                </div>
+
+                                <div class="div__bottom">
+                                    <h5 class="card__title__bottom"><img src="/img/wheel.png" alt="wheel" class="ico__wheel"> Top Speed:  {{this.topSpeed}} km/h</h5>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                {{/each}}
+            </div>
+        </div>
+    </section>
+</div>
+
