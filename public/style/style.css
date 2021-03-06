@@ -4,6 +4,13 @@
 }
 html {
   height: 100%;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-weight: inherit;
+  font-style: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
 }
 
 /*@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');*/
@@ -12,6 +19,7 @@ html {
     font-family: 'Lato', sans-serif;
     margin: 0;
     padding: 0;
+    box-sizing: border-box;;
 }
 
 .body{
@@ -583,6 +591,8 @@ footer{
   height: 350px;
   background-color: #1A1A1A;
   color: #fff;
+  position: absolute;
+  bottom: 100;
 }
 
 footer h3{
@@ -720,4 +730,85 @@ footer h5{
 
 .social__media li:nth-child(3) a:before {
   background: #0077b5;
+}
+
+/*RENT*/
+
+.background__rent{
+  width: 100%;
+  height: 400px;
+  background-image: url('../img/FLOTA-2020.jpeg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: center;
+	align-items: center;
+}
+
+.title__rent{
+  color: #fff;
+  text-align: center;
+  height: 100px;
+  width: 50%;
+}
+
+.car__search__form{
+  margin: 50px auto;
+  width: 91%;
+  border-radius: 5px;
+  border: 1px solid #e1e1e1;
+  -webkit-box-shadow: 0 5px 40px rgb(0 0 0 / 15%);
+  -moz-box-shadow: 0 5px 40px rgba(0,0,0,.15);
+  box-shadow: 0 5px 40px rgb(0 0 0 / 15%);
+  display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: center;
+	align-items: center;
+}
+
+.box__search{
+  width: 70%;
+  border: 1px solid #dce0e0;
+  border-radius: 5px;
+  background: #fff;
+  position:relative;
+  left: 25%;
+}
+
+.search__btn button{
+  position: relative;
+  width: 50%;
+  left: 50%;
+  transform: translateX(-50%);
+  display: inline-block;
+  padding: 5px 10px;
+  color: #fff;
+  font-size: 16px;
+  text-decoration: none;
+  text-transform: uppercase;
+  overflow: hidden;
+  transition: .5s;
+  margin-top: 10px;
+  letter-spacing: 4px;
+  background-color:  var(--c-card-background);
+  border-radius: 20px;
+}
+
+.search__btn button:hover{
+  background: var(--c-primary);
+  color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 5px var(--c-primary),
+              0 0 25px var(--c-primary),
+              0 0 50px var(--c-primary),
+              0 0 100px var(--c-primary);
+}
+
+.card__img__rent{
+  width: 100%;
+  height: 180px;
 }
