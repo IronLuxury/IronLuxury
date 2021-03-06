@@ -1,16 +1,24 @@
 <div class="container">
     <div class="col">
-        <div class="card m-4">
-            <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
-                <img src="{{this.image}}" class="img-fluid" alt="{{this.brand}}" />
-                <a href="#!">
-                    <div class="mask" style="background-color: rgba(251, 251, 251, 0.15)"></div>
-                </a>
-            </div>
-            <div class="card-body">
-                <h5 class="card-title">{{this.brand}}</h5>
-                <a href="/detail/{{_id}}" class="btn btn-movie">Reserve</a>
-            </div>
+        <div class="card" style="border: none;">
+            <a href="/detail/{{_id}}" class="raise">
+                <div class="card__img">
+                    <img src="{{this.image}}" class="card-img-top card__img__rent" alt="...">
+                </div>
+                <div class="card-body card__body">
+                    <div class="div__title">
+                        <h5 class="card-title card__title">{{this.brand}} {{this.model}}</h5>
+                    </div>
+                    <div class="div__price">
+                        <div class="price">{{this.price}}€</div>
+                    </div>
+    
+                    <div class="div__bottom">
+                        <h5 class="card__title__bottom"><img src="/img/wheel.png" alt="wheel" class="ico__wheel"> Top Speed:
+                            {{this.topSpeed}} km/h</h5>
+                    </div>
+                </div>
+            </a>
         </div>
     </div>
 </div>

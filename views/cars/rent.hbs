@@ -1,4 +1,45 @@
-<h1>Welcome to the rent car</h1>
+<div class="background__rent">
+    <div class="title__rent">
+        <h1>IronLuxury Rental Car</h1>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <form action="/rent" method="GET" class="car__search__form">
+            
+            <div class="col">
+                <div class="box__search">
+                    <select class="form-select" name="category" style="display: inline;">
+                        <option selected>Category</option>
+                        {{#each cars}}
+                        <option value="{{this.brand}}">{{this.brand}}</option>
+                        {{/each}}
+                    </select>
+                </div>
+            </div>
+            <div class="col">
+                <div class="box__search">
+                    <select class="form-select" name="price" style="display: inline;">
+                        <option selected>Price High to Low</option>
+                        <option value="1">Price Low to High</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col">
+                <div class="search__btn" style="margin: 25px;">
+                    <button href="/rent" style="margin-bottom:5px">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        Search
+                    </button>
+                </div>
+            </div>
+       </form>
+    </div>
+</div>
 
 <div class="container">
     <div class="row">
