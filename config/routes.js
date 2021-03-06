@@ -28,4 +28,7 @@ router.get('/detail/:id', carsController.detail)
 router.get('/reservation/:id', secure.isAuthenticated, carsController.reserve)
 router.post('/reservation/:id', secure.isAuthenticated, carsController.doReserve)
 
+router.get('/editProfile',secure.isAuthenticated,userController.editProfile)
+router.post('/editProfile',secure.isAuthenticated,userController.doEditProfile)
+
 module.exports = router;

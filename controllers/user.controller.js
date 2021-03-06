@@ -100,9 +100,32 @@ module.exports.activate = (req, res, next) => {
 
 module.exports.profile = (req, res, next) => {
     res.render('users/profile')
+    
+    
 }
+
+module.exports.editProfile = (req,res,next) =>{
+    res.render('user/editProfile')
+}
+
+module.exports.doEditProfile = (req, res, next) => {
+    User.findByIdAndUpdate(req.user.id, req.body,
+      {
+        safe: true,
+        upsert: true,
+        new: true,
+      })
+      .then(user => {
+        if (!user) {
+          next(createError(404, 'User not found'));
+        } else {
+          res.redirect('/users/profile')
+        }})
+        .catch(error => next(error));
+  }
 
 module.exports.logout = (req, res, next) => {
     req.session.destroy()
     res.redirect('/')
 }
+
