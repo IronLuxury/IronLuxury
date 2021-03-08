@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 const User = require('../models/user.model');
+const Contact = require('../models/contact.model')
 const { sendActivationEmail } = require('../config/mailer.config');
 const passport = require('passport');
 const flash = require('connect-flash')
@@ -105,11 +106,16 @@ module.exports.profile = (req, res, next) => {
 }
 
 module.exports.editProfile = (req,res,next) =>{
-    res.render('user/editProfile')
+    res.render('users/editProfile')
 }
 
 module.exports.doEditProfile = (req, res, next) => {
-    User.findByIdAndUpdate(req.user.id, req.body,
+    
+    if(req.file){
+        req.body.image = req.file.path
+    }
+
+    User.findByIdAndUpdate(req.currentUser.id, req.body,
       {
         safe: true,
         upsert: true,
@@ -119,10 +125,33 @@ module.exports.doEditProfile = (req, res, next) => {
         if (!user) {
           next(createError(404, 'User not found'));
         } else {
-          res.redirect('/users/profile')
+          res.redirect('/profile')
         }})
-        .catch(error => next(error));
+        .catch(error =>{
+            console.log(error)
+            next(error)
+        } );
   }
+
+  module.exports.contact = (req, res, next) => {
+    res.render('users/contact')
+}
+
+module.exports.doContact = (req, res, next) => {
+    const {name, email,phone,message } = req.body
+   
+
+    Reservation.create({name,email, phone,message})
+        .then((r) => {
+            req.flash('flashMessage','we will contact you as soon as possible.!')
+            res.redirect('/')
+            console.log('Contact created', r)
+        })
+        .catch((e) => {
+            console.log(e)
+            next(e)
+        });
+}
 
 module.exports.logout = (req, res, next) => {
     req.session.destroy()

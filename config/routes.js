@@ -5,6 +5,10 @@ const userController = require('../controllers/user.controller')
 const carsController = require('../controllers/car.controller')
 const secure = require("../middlewares/secure.middleware");
 const GOOGLE_SCOPES = ['https://www.googleapis.com/auth/userinfo.email', 'https://www.googleapis.com/auth/userinfo.profile']
+//const multer = require('multer')
+//const upload = multer({ dest: "./public/uploads"})
+
+const upload = require('./storage.config') //Traemos toda la configuración de cloudinary
 
 
 router.get('/', indexController.home)
@@ -28,6 +32,9 @@ router.get('/detail/:id', secure.isAuthenticated, carsController.detail)
 router.post('/reservation/:id', secure.isAuthenticated, carsController.doReserve)
 
 router.get('/editProfile',secure.isAuthenticated,userController.editProfile)
-router.post('/editProfile',secure.isAuthenticated,userController.doEditProfile)
+router.post('/editProfile',secure.isAuthenticated,upload.single("image"),userController.doEditProfile)
+
+//router.get('/contact',userController.)
+//router.post('/contact',userController.)
 
 module.exports = router;

@@ -455,6 +455,39 @@ input[type=date]:invalid::-webkit-datetime-edit {
   padding: 3rem !important
 }
 
+.profile__box{
+  width: 900px;
+  height: 500px;
+}
+
+.image__profile{
+  height: 200px;
+  width: 250px;
+}
+
+.title__profile{
+  font-size: 20px;
+  margin: 20px;
+}
+
+.btn__box{
+  display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: space-around;
+	align-items: center;
+	align-content: stretch;
+}
+
+.info__profile{
+  font-size: 16px;
+  margin: 20px;
+}
+
+.btn__profile{
+  margin: 20px;
+}
+
 .user-card-full {
   overflow: hidden
 }
@@ -579,6 +612,58 @@ h6 {
   margin: 0 10px 0 0;
   -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out
+}
+
+/*Edit profile*/
+
+.input_name{
+  width: 250px;
+  height: 40px;
+  border:2px solid gray;
+  border-radius: 5px;
+ 
+  
+}
+
+.input_email{
+  width: 250px;
+  height: 40px;
+  border:2px solid gray;
+  border-radius: 5px;
+  
+  
+}
+
+.input_phone{
+  width: 150px;
+  height: 40px;
+  border:2px solid gray;
+  border-radius: 5px;
+  
+}
+
+.input_age{
+  width: 100px;
+  height: 40px;
+  border:2px solid gray;
+  border-radius: 5px;
+  
+}
+
+.btn_bubmit{
+  margin-top: 100px;
+}
+
+.btn_file{
+  width: 150px;
+}
+
+.backgroud__profile{
+  background-image: url("https://images.unsplash.com/photo-1494783367193-149034c05e8f?ixid=MXwxMjA3fDB8MHxzZWFyY2h8NXx8cm9hZHxlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=60"); 
+  height: 800px; 
+  background-position: center; 
+  background-repeat: no-repeat; 
+  background-size: cover; 
 }
 /*INDEX*/
 .index__info{
@@ -928,3 +1013,4 @@ footer h5{
   height: 180px;
 
 }
+
