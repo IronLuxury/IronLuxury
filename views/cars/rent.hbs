@@ -6,14 +6,13 @@
 
 <div class="container">
     <div class="row">
-        <form action="/rent" method="GET" class="car__search__form">
-            
+        <form action="/filterCar" method="GET" class="car__search__form">
             <div class="col">
                 <div class="box__search">
-                    <select class="form-select" name="category" style="display: inline;">
-                        <option selected>Category</option>
-                        {{#each cars}}
-                        <option value="{{this.brand}}">{{this.brand}}</option>
+                    <select class="form-select" name="brand" style="display: inline;">
+                        <option disabled selected>Category</option>
+                        {{#each models}}
+                        <option value="{{this}}">{{this}}</option>
                         {{/each}}
                     </select>
                 </div>
@@ -21,14 +20,15 @@
             <div class="col">
                 <div class="box__search">
                     <select class="form-select" name="price" style="display: inline;">
-                        <option selected>Price High to Low</option>
-                        <option value="1">Price Low to High</option>
+                        <option disabled selected>Price</option>
+                        <option value = "desc">Price High to Low</option>
+                        <option value="asc">Price Low to High</option>
                     </select>
                 </div>
             </div>
             <div class="col">
                 <div class="search__btn" style="margin: 25px;">
-                    <button href="/rent" style="margin-bottom:5px">
+                    <button style="margin-bottom:5px">
                         <span></span>
                         <span></span>
                         <span></span>

@@ -9,7 +9,6 @@ const GOOGLE_SCOPES = ['https://www.googleapis.com/auth/userinfo.email', 'https:
 
 router.get('/', indexController.home)
 
-//Users
 router.get('/authenticate/google', passport.authenticate('google-auth', { scope: GOOGLE_SCOPES }))
 router.get('/authenticate/google/cb',userController.doLoginGoogle)
 
@@ -23,9 +22,9 @@ router.get('/profile', secure.isAuthenticated, userController.profile)
 router.get('/activate/:token', secure.isNotAuthenticated, userController.activate)
 
 router.get('/rent', carsController.rent)
-router.get('/detail/:id', carsController.detail)
+router.get('/filterCar', carsController.filterCar)
 
-router.get('/reservation/:id', secure.isAuthenticated, carsController.reserve)
+router.get('/detail/:id', secure.isAuthenticated, carsController.detail)
 router.post('/reservation/:id', secure.isAuthenticated, carsController.doReserve)
 
 module.exports = router;

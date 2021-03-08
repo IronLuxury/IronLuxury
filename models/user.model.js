@@ -2,13 +2,15 @@ const mongoose = require('mongoose')
 const bcrypt = require('bcrypt')
 const EMAIL_PATTERN = /^(([^<>()[\]\\.,;:\s@']+(\.[^<>()[\]\\.,;:\s@']+)*)|('.+'))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 const PASSWORD_PATTERN = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z]{8,}$/;
+const PHONE_PATTERN = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im;
 const SALT_ROUNDS = 11
 
 const userSchema = new mongoose.Schema(
     {
     name: {
         type: String,
-        trim: true
+        trim: true,
+        required: true
     },
     email: {
         type: String,
@@ -20,7 +22,11 @@ const userSchema = new mongoose.Schema(
     password: {
         type: String,
         required: 'The password is mandatory',
-        match: [PASSWORD_PATTERN, "Your password does not meet the requirements"]
+        match: [PASSWORD_PATTERN, 'Your password does not meet the requirements']
+    },
+    phone:{
+        type: Number,
+        match: [PHONE_PATTERN, 'Your Phone Number does not meet the reqyurements']
     },
     image:{
         type: String,
@@ -30,7 +36,6 @@ const userSchema = new mongoose.Schema(
             },
             message: 'URL must start with HTTP/HTTPS'
         },
-        
     },
     active: {
         type: Boolean,

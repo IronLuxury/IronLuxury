@@ -1,16 +1,82 @@
 <div class="container my-5">
     <div class="row justify-content-center">
         <div class="col">
-            <img src="{{image}}" class="image__movie" alt="{{brand}}">
+            <h1 class="title__detail">{{this.brand}} {{this.model}}</h1>
+            <img src="{{image}}" class="image__detail" alt="{{brand}}">
         </div>
-        <div class="col des__movie">
-            <h1>{{brand}}</h1>
-            <p class="mt-4">            
-            <h4>Max Power: {{maxPower}}</h4>
-            <h5>Model: {{model}}</h5>
-            </p>
+        <div class="col">
+            <div class="reservation__form">
+                <h2>Reservation</h2>
+                <form action="/reservation/{{id}}" method="POST" autocomplete="off">
+                    <div class="user__box">
+                        <input type="text" name="name" value="{{currentUser.name}}" required>
+                        <label>Name</label>
+                    </div>
+                    <div class="user__box">
+                        <input type="text" name="email" value="{{currentUser.email}}" required>
+                        <label>Email</label>
+                    </div>
+                    <div class="user__box">
+                        <input type="date" name="dateReserve" required>
+                    </div>
+                    <div class="user__box">
+                        <input type="text" name="phone" value="" required>
+                        <label>Phone number</label>
+                    </div>
+                    <div class="reserve__btn" style="margin: 15px;">
+                        <button style="margin-bottom:5px">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            Reserve
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
 
-            <a href="/reservation/{{_id}}" class="btn btn__reserve">Reserve</a>
+<div class="container">
+    <div class="row justify-content-cente">
+        <div class="Specifications">
+            <h3 class="title__spec">Specifications:</h3>
+            <div class="row">
+                <div class="icon__box">
+                    <img src="/img/sports-car.png" alt="ico_velocity" class="icon__spec">
+                    <b>{{this.brand}} {{this.model}}</b>
+                    <img src="/img/velocity.png" alt="ico_velocity" class="icon__spec">
+                    <b>Maximum speed: {{this.topSpeed}} km/h</b>
+                    <img src="/img/energy.png" alt="" class="icon__spec">
+                    <b>Power {{this.engineSize}} CV</b>
+                </div>
+            </div>
+            <div class="row">
+                <div class="icon__box">
+                    <img src="/img/money.png" alt="ico_velocity" class="icon__spec">
+                    <b >Cost: {{this.price}}€ per day</b>
+                    <img src="/img/gearshift.png" alt="" class="icon__spec">
+                    <b>Engine Displacement {{this.engineSize}}</b>
+                    <img src="/img/car.png" alt="" class="icon__spec">
+                    <b>Seats: {{this.seats}}</b>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="requirements">
+            <h3 class="title__spec">Requirements:</h3>
+            <ul>
+                <li>The driver must be at least 21 years old.</li><br/>
+                <li>Have a valid driving license B or international permit, if necessary.</li><br/>
+                <li>Full payment of the rent and the deposit before picking up the vehicle.</li><br/>
+                <li>Sign the rental contract before picking up the vehicle.</li><br/>
+                <li>Have a valid passport or DNI / NIE / ID (identity document).</li>
+            </ul>
         </div>
     </div>
 </div>

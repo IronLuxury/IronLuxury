@@ -49,6 +49,7 @@ app.use((error, req, res, next) => {
     if (!error.status) {
         error = createError(500);
     }
+    
     res.status(error.status);
     res.render("error", error);
 });

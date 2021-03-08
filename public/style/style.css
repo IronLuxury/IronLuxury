@@ -96,7 +96,6 @@ html {
 }
 
 /*LOGIN*/
-
 .login__box {
   position: absolute;
   top: 50%;
@@ -132,6 +131,7 @@ html {
   outline: none;
   background: transparent;
 }
+
 .login__box .user__box label {
   position: absolute;
   top:0;
@@ -292,24 +292,137 @@ html {
 }
 
 /*CAR DETAIL*/
-.image__movie{
-  height: 22em;
+.image__detail{
+  height: 21em;
+  width: 37em;
+  box-shadow: 0 15px 25px rgba(0,0,0,.6);
 }
 
-.btn__reserve{
-  background-color: var(--c-primary);
+.title__detail{
+  margin: 25px 20px;
 }
 
-/*RESERVE FORM*/
-.date__reserve{
-  background-color: Transparent;
-  background-repeat:no-repeat;
+/*FORM DETAIL*/
+.reservation__form {
+  position: relative;
+  top: 60%;
+  left: 50%;
+  width: 400px;
+  padding: 40px;
+  transform: translate(-50%, -50%);
+  box-sizing: border-box;
+  box-shadow: 0 15px 25px rgba(0,0,0,.6);
+  border-radius: 10px;
+}
+
+.reservation__form h2 {
+  margin: 0 0 30px;
+  padding: 0;
+  color: #1A1A1A;
+  text-align: center;
+}
+
+.reservation__form .user__box {
+  position: relative;
+}
+
+.reservation__form .user__box input {
+  width: 100%;
+  padding: 10px 0;
+  font-size: 16px;
+  color: #1A1A1A;
+  margin-bottom: 30px;
   border: none;
-  cursor:pointer;
-  overflow: hidden;
+  border-bottom: 1px solid #1A1A1A;
+
+}
+
+.reservation__form .user__box label {
+  position: absolute;
+  top:0;
+  left: 0;
+  padding: 10px 0;
+  font-size: 16px;
+  color: rgb(153, 151, 151);
+  pointer-events: none;
+  transition: .5s;
+}
+
+.reservation__form .user__box input:focus ~ label,
+.reservation__form .user__box input:valid ~ label {
+  top: -25px;
+  left: 0;
+  color: white;
+  font-size: 12px;
+}
+input[type=date]:invalid::-webkit-datetime-edit {
+    color:rgb(153, 151, 151);
+}
+
+.reserve__btn button{
+  position: relative;
+  width: 50%;
+  left: 50%;
+  transform: translateX(-50%);
+  display: inline-block;
+  padding: 5px 10px;
   color: #fff;
+  font-size: 16px;
+  text-decoration: none;
+  text-transform: uppercase;
+  overflow: hidden;
+  transition: .5s;
+  margin-top: 10px;
+  letter-spacing: 4px;
+  background-color:#daac15;
+  border-radius: 5px;
+  border:none ;
+}
+
+.reserve__btn button:hover{
+  background: #daac15;
+  color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 5px #daac15,
+              0 0 25px #daac15,
+              0 0 50px #daac15,
+              0 0 100px #daac15;
+}
+
+.title__spec{
+  margin-top: 20px;
+  margin-left: 20px;
+  margin-bottom: 10px;
+}
+
+.requirements{
+  margin-top: 20px;
   margin-bottom: 20px;
 }
+
+.requirements ul li{
+  color: #1A1A1A;
+  font-size: 16px;
+  height: 30px;
+  line-height: 30px;
+}
+
+.spec__box{
+  width: 500px;
+}
+
+.icon__box{
+  margin: 20px;
+}
+
+.icon__spec{
+  margin-left: 20px;
+  height: 50px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
 
 /*CAROUSEL*/
 .title__carousel{
@@ -795,7 +908,7 @@ footer h5{
   margin-top: 10px;
   letter-spacing: 4px;
   background-color:  var(--c-card-background);
-  border-radius: 20px;
+  border-radius: 5px;
 }
 
 .search__btn button:hover{
