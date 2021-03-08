@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
 const Car = require('../models/car.model')
 const Reservation = require('../models/reservation.model')
+
 const {sendRent} = require('../config/mailer.config')
 const flash = require('connect-flash')
 
