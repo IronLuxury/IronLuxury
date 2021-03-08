@@ -2,12 +2,13 @@ const cars = [
 
     {
         brand: 'Lamborghini',
-        model: 'Huracán EVO',
+        model: 'Huracán',
         topSpeed: 340,
         maxPower: 725,
         engineSize: 5200,
         price: 1200,
-        image: 'https://res.cloudinary.com/dxo4hpxro/image/upload/v1614723704/cars/hucaran-evo_kepp2b.jpg'
+        seats: 2,
+        image: 'https://res.cloudinary.com/dxo4hpxro/image/upload/v1614726966/cars/hucaran-evo_bwa8o8.jpg'
     },
 
     {
@@ -17,7 +18,8 @@ const cars = [
         maxPower: 620,
         engineSize: 5200,
         price: 600,
-        image: 'https://res.cloudinary.com/dxo4hpxro/image/upload/v1614724133/cars/chevrolet-camaro_icp9bs.jpg'
+        seats: 2,
+        image: 'https://res.cloudinary.com/dxo4hpxro/image/upload/v1614726857/cars/chevrolet-camaro_wggtbd.jpg'
     },
 
     {
@@ -27,6 +29,7 @@ const cars = [
         maxPower: 1000,
         engineSize: 4000,
         price: 1100,
+        seats: 2,
         image: 'https://res.cloudinary.com/dxo4hpxro/image/upload/v1614723703/cars/ferrari-f8_lhxvgm.jpg'
     },
     {
@@ -36,6 +39,7 @@ const cars = [
         maxPower: 510,
         engineSize: 4000,
         price: 650,
+        seats: 4,
         image: 'https://res.cloudinary.com/dxo4hpxro/image/upload/v1614723705/cars/audi-r8-1_vutfv6.jpg'
     },
 
@@ -46,6 +50,7 @@ const cars = [
         maxPower: 1500,
         engineSize: 8000,
         price: 1000,
+        seats: 2,
         image: 'https://res.cloudinary.com/dxo4hpxro/image/upload/v1614723705/cars/mclare-ms500-coupe_dau1hg.jpg'
     },
 
@@ -56,6 +61,7 @@ const cars = [
         maxPower: 640,
         engineSize: 5200,
         price: 1500,
+        seats: 2,
         image: 'https://res.cloudinary.com/dxo4hpxro/image/upload/v1614723705/cars/bugatti-divo-3_eogt7q.jpg'
     },
 
@@ -67,7 +73,8 @@ const cars = [
         maxPower: 385,
         engineSize: 3000,
         price: 500,
-        image: 'https://res.cloudinary.com/dxo4hpxro/image/upload/v1614723705/cars/porche_mu8bil.jpg'
+        seats: 4,
+        image: 'https://res.cloudinary.com/dxo4hpxro/image/upload/v1615233045/cars/porsche_ulbzlr.jpg'
     },
 
     {
@@ -77,6 +84,7 @@ const cars = [
         maxPower: 529,
         engineSize: 4000,
         price: 450,
+        seats: 5,
         image: 'https://res.cloudinary.com/dxo4hpxro/image/upload/v1614723704/cars/bentley-continental_zpasbk.jpg'
     },
 
@@ -87,6 +95,7 @@ const cars = [
         maxPower: 450,
         engineSize: 3500,
         price: 700,
+        seats: 2,
         image: 'https://res.cloudinary.com/dxo4hpxro/image/upload/v1614723824/cars/bmw-cabrio_gh0zud.jpg'
     },
 
@@ -97,6 +106,7 @@ const cars = [
         maxPower: 460,
         engineSize: 4700,
         price: 1050,
+        seats: 2,
         image: 'https://res.cloudinary.com/dxo4hpxro/image/upload/v1614723704/cars/maserati-ghibli_xlnaxc.jpg'
     },
 
@@ -107,6 +117,7 @@ const cars = [
         maxPower: 565,
         engineSize: 5935,
         price: 800,
+        seats: 5,
         image: 'https://res.cloudinary.com/dxo4hpxro/image/upload/v1614723704/cars/mercedes-gt-45_ybvfkc.jpg'
     },
     {
@@ -116,6 +127,7 @@ const cars = [
         maxPower: 725,
         engineSize: 5200,
         price: 900,
+        seats: 2,
         image: 'https://res.cloudinary.com/dxo4hpxro/image/upload/v1614723704/cars/aston-martin-supperleggera_ffwpqu.webp'
     },
     {
@@ -125,6 +137,7 @@ const cars = [
         maxPower: 510,
         engineSize: 4000,
         price: 750,
+        seats: 4,
         image: 'https://res.cloudinary.com/dxo4hpxro/image/upload/v1614723685/cars/audi-r8_dp4vnd.jpg'
     }
 ]
