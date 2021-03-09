@@ -1,0 +1,45 @@
+<div class="backgroud__contact">
+<div class="container my-5">
+    <div class="row justify-content-center">
+       
+        <div class="col">
+            <div class="contact__form">
+                <h2>Contact us</h2>
+                <form action="/contact" method="POST" autocomplete="off">
+                    <div class="user__box">
+                        <input type="text" name="name" value="" required>
+                        <label>Name</label>
+                    </div>
+                    <div class="user__box">
+                        <input type="text" name="email" value=""  required>
+                        <label>Email</label>
+                    </div>
+                    <div class="user__box">
+                        <input type="text" name="phone" value="" required>
+                        <label>Phone</label>
+                    </div>
+                    <div class="user__box">
+                        <textarea name="message" rows="6" cols="30">Message</textarea>
+                    </div>
+                    <div class="reserve__btn" style="margin: 15px;">
+                        <button style="margin-bottom:5px">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            Submit
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+<div id="map"></div>
+
+<script src="/js/map.js"></script>
+<script
+	src="https://maps.googleapis.com/maps/api/js?key={{MAP_KEY}}&callback=initMap&libraries=&v=weekly"
+	async
+></script>

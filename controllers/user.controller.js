@@ -141,7 +141,7 @@ module.exports.doContact = (req, res, next) => {
     const {name, email,phone,message } = req.body
    
 
-    Reservation.create({name,email, phone,message})
+    Contact.create({name,email, phone,message})
         .then((r) => {
             req.flash('flashMessage','we will contact you as soon as possible.!')
             res.redirect('/')
