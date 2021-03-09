@@ -34,7 +34,7 @@ router.post('/reservation/:id', secure.isAuthenticated, carsController.doReserve
 router.get('/editProfile',secure.isAuthenticated,userController.editProfile)
 router.post('/editProfile',secure.isAuthenticated,upload.single("image"),userController.doEditProfile)
 
-//router.get('/contact',userController.)
-//router.post('/contact',userController.)
+router.get('/contact',userController.contact)
+router.post('/contact',userController.doContact)
 
 module.exports = router;
