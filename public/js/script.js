@@ -6,7 +6,7 @@ setTimeout(()=> {
         new bootstrap.Toast(toast).hide()
     })
 
-}, 4000)
+}, 6000)
 
 
 

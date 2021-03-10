@@ -134,7 +134,7 @@ module.exports.doEditProfile = (req, res, next) => {
   }
 
   module.exports.contact = (req, res, next) => {
-    res.render('users/contact')
+    res.render('users/contact',{MAP_KEY:process.env.MAP_KEY})
 }
 
 module.exports.doContact = (req, res, next) => {
