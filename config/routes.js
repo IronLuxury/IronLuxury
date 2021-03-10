@@ -29,6 +29,7 @@ router.get('/rent', carsController.rent)
 router.get('/filterCar', carsController.filterCar)
 
 router.get('/detail/:id', secure.isAuthenticated, carsController.detail)
+router.get('/reservation', secure.isAuthenticated, carsController.reserve )
 router.post('/reservation/:id', secure.isAuthenticated, carsController.doReserve)
 
 router.get('/editProfile',secure.isAuthenticated,userController.editProfile)

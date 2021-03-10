@@ -3,6 +3,7 @@ const mongoose = require('mongoose')
 const LocalStrategy = require('passport-local').Strategy;
 const GoogleStrategy = require('passport-google-oauth').OAuth2Strategy
 const User = require('../models/user.model')
+const Reservation = require('../models/reservation.model')
 
 passport.serializeUser((user, next) => {
     next(null, user.id)
@@ -10,9 +11,12 @@ passport.serializeUser((user, next) => {
 
 passport.deserializeUser((id, next) => {
     User.findById(id)
-        /*EJ SI QUIERES SACAR LOS POST DEL USUARIO
-        Populate
-        */
+      .populate({
+        path: 'reservations',
+        populate:{
+          path: 'car'
+        }
+      })
         .then((user) => {
             next(null, user)
         })
