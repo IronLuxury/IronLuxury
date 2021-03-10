@@ -7,18 +7,7 @@
             <li class="inline elements"><a class="elements" href="#">Business</a></li>
             <li class="inline elements"><a class="elements" href="#">Contact us</a></li>
         </ul>
-        {{#if currentUser}}
-    <ul class="nav__left">
-        <li><a href="/">Home</a></li>
-        <li><a href="/rent">Rent</a></li>
-        <li><a href="#">Buy</a></li>
-        <li><a href="#">Business</a></li>
-        <li><a href="/contact">Contact us</a></li>
-    </ul>
     {{#if currentUser}}
-    <form action="/logout" method="POST">
-        <button class="btn__logout">Logout</button>
-    </form>
     <ul class="nav__right">
         <li class="nav-item dropdown nav__item" style="text-decoration: none;">
             <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown"
