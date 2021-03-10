@@ -14,7 +14,8 @@
                 </div>
                 <div class="div__bottom">
                     <h5 class="card__title__bottom"><img src="/img/calendar.png" alt="wheel" style="height: 30px;">
-                        Date:
+                        Date: {{#formatDate this.dateReserve}}
+                              {{/formatDate}}
                     </h5>
                     </div>
                 <div class="div__bottom">
@@ -22,14 +23,23 @@
                         Phone: {{this.phone}}
                     </h5>
                 </div>
-                <div class="cancel__btn" style="margin: 25px;">
-                    <button style="margin-bottom:5px">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                        Cancel Reservation
-                    </button>
+
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    Launch demo modal
+                </button>
+                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <div class="cancel__btn" style="margin: 25px;">
+                            <form action="/reservation/{{this.id}}/delete" method="POST">
+                                <button type="submit" style="margin-bottom:5px">
+                                    Cancel Reservation
+                                </button>
+                            </form>
+                        </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

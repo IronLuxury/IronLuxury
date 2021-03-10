@@ -7,7 +7,7 @@ const hbs = require('hbs');
 const passport = require('passport');
 const session = require('./config/session.config');
 const flash = require('connect-flash')
-
+require('./config/hbs.config');
 require("./config/db.config");
 require("./config/passport.config");
 
