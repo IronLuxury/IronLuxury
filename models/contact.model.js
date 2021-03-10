@@ -16,8 +16,22 @@ const contactScheme = new mongoose.Schema({
     message:{
         type: String,
         require: true
+    },
+    location:{
+        type:{
+        type:String,
+        enum: ['Point'],
+        required:true,
+        default: 'Point'
+        },
+       coordinates:{
+           type:[Number],
+           required:true
+       }
     }
 })
+
+contactScheme.index({location: '2dsphere'})
 
 const Contact = mongoose.model('Contact', contactScheme)
 

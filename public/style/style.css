@@ -1067,6 +1067,96 @@ footer h5{
   border-radius: 5px; 
 }
 
+/*Contact us*/
+
+.contact__form{
+    position: relative;
+    top: 50%;
+    left: 50%;
+    width: 400px;
+    padding: 40px;
+    transform: translate(-50%, -50%);
+    box-sizing: border-box;
+    box-shadow: 0 15px 25px rgba(0,0,0,.6);
+    border-radius: 10px;
+    margin-bottom:100px;
+  }
+  .contact__form h2 {
+    margin: 0 0 30px;
+    padding: 0;
+    color: #1A1A1A;
+    text-align: center;
+  }
+  
+  .contact__form .user__box {
+    position: relative;
+  }
+  
+  .contact__form .user__box input {
+    width: 100%;
+    padding: 10px 0;
+    font-size: 16px;
+    color: #1A1A1A;
+    margin-bottom: 30px;
+    border: none;
+    border-bottom: 1px solid #1A1A1A;
+  
+  }
+  
+  .contact__form .user__box label {
+    position: absolute;
+    top:0;
+    left: 0;
+    padding: 10px 0;
+    font-size: 16px;
+    color: rgb(153, 151, 151);
+    pointer-events: none;
+    transition: .5s;
+  }
+  
+  .contact__form .user__box input:focus ~ label,
+  .contact__form .user__box input:valid ~ label {
+    top: -25px;
+    left: 0;
+    color: white;
+    font-size: 12px;
+  }
+  
+  
+  .reserve__btn button{
+    position: relative;
+    width: 50%;
+    left: 50%;
+    transform: translateX(-50%);
+    display: inline-block;
+    padding: 5px 10px;
+    color: #fff;
+    font-size: 16px;
+    text-decoration: none;
+    text-transform: uppercase;
+    overflow: hidden;
+    transition: .5s;
+    margin-top: 10px;
+    letter-spacing: 4px;
+    background-color:#daac15;
+    border-radius: 5px;
+    border:none ;
+  }
+  
+  .reserve__btn button:hover{
+    background: #daac15;
+    color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 5px #daac15,
+                0 0 25px #daac15,
+                0 0 50px #daac15,
+                0 0 100px #daac15;
+  }
+  
+  #map{
+    height: 400px;
+  }
+  
 .cancel__btn button:hover{
   background:  rgb(196, 50, 50);
   color: #fff;
