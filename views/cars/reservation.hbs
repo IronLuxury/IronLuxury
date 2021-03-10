@@ -1,19 +1,42 @@
-<div class="register__login">
-    <div class="login__box">
-        <h2>Reserve</h2>
-        <form action="/reservation/{{id}}" method="POST" autocomplete="off">
-            <input type="date" name="dateReserve" class="date__reserve" required>
-            <div class="user__box">
-                <input type="text" name="phone" value="" required>
-                <label>Phone number</label>
-            </div>
-            <button type="submit" class="btn__submit" style="margin-bottom:5px">
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
-                Reserve
-            </button>
-        </form>
+<div class="background__res">
+    <div class="title__background">
+        <h1>Cars Reservations</h1>
+    </div>
+</div>
+
+   <h1 style="text-align: center;" class="mt-5">Enterprise car rental cancellation</h1>
+
+<div class="container mt-5">  
+    <div class="info__cancellation p-1">
+        <span style="font-weight: bold;">If you have already picked up your vehicle:</span>
+        <p>If you have already picked up your vehicle and wish to keep it longer; you must contact the location where you picked up
+        the vehicle.</p>
+
+        <span style="font-weight: bold;">If you have not picked up your vehicle:</span>
+        <p>If you have not picked up your vehicle you can view, modify, or cancel your reservation by clicking here. When visiting
+        this page, you will need to make sure all fields are filled out. If you fail to enter in your confirmation number, first
+        name, and last name -- the reservation will not be found. If you have entered in all this information correctly and
+        still cannot modify your reservation, please contact us.</p>
+
+        <span style="font-weight: bold;">Will I be charged if I don't show up for my reservation?</span>
+        <p>If you fail to pick up your prepaid rental on the specified pick-up date, you will receive a full refund minus a no show
+        fee of EUR 100€ / EUR 135€.</p>
+
+        <span style="font-weight: bold;">Will my rate change if I modify my reservation?</span>
+        <p>Possibly - rental rates can change on a daily basis so changing the dates or number of days may change the daily rate.
+        
+        Reservations booked on a third party website must be canceled through the third party website. Reservations agents
+        cannot change reservations booked on these websites nor can you cancel them on the Enteprise.com website. Please return
+        to the website where you originally booked the reservation.</p>
+    </div>
+</div>
+
+<div class="container mt-5">
+    <div class="row">
+        {{#each reservations}}
+        <div class="col-4">
+            {{>cardReservation}}
+        </div>
+        {{/each}}
     </div>
 </div>
