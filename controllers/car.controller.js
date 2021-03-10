@@ -41,6 +41,8 @@ module.exports.detail = (req, res, next) => {
 
 module.exports.reserve = (req, res, next) => {
     const reservations = req.currentUser.reservations
+    console.log(req.currentUser)
+    console.log(reservations)
     res.render('cars/reservation', {reservations:reservations})
 }
 
@@ -59,7 +61,14 @@ module.exports.doReserve = (req, res, next) => {
             console.log('Reservation created', r)
         })
         .catch((e) => {
-            console.log(e)
+            next(e)
+        });
+}
+
+module.exports.doDelete = (req, res, next) => {
+    Reservation.findByIdAndDelete(req.params.id)
+        .then(() => res.redirect('/reservation'))
+        .catch((e) => {
             next(e)
         });
 }

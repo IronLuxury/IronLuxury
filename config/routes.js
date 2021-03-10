@@ -32,6 +32,8 @@ router.get('/detail/:id', secure.isAuthenticated, carsController.detail)
 router.get('/reservation', secure.isAuthenticated, carsController.reserve )
 router.post('/reservation/:id', secure.isAuthenticated, carsController.doReserve)
 
+router.post('/reservation/:id/delete', secure.isAuthenticated, carsController.doDelete)
+
 router.get('/editProfile',secure.isAuthenticated,userController.editProfile)
 router.post('/editProfile',secure.isAuthenticated,upload.single("image"),userController.doEditProfile)
 
