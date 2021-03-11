@@ -23,25 +23,43 @@
                         Phone: {{this.phone}}
                     </h5>
                 </div>
-
-                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                    Launch demo modal
-                </button>
+                <div class="cancel__btn" style="margin: 25px;">
+                    <button type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                        Cancel Reservation
+                    </button>
+                </div>
                 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                     <div class="modal-dialog">
                         <div class="modal-content">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        <div class="cancel__btn" style="margin: 25px;">
-                            <form action="/reservation/{{this.id}}/delete" method="POST">
-                                <button type="submit" style="margin-bottom:5px">
-                                    Cancel Reservation
-                                </button>
-                            </form>
+                            <div class="modal-header">
+                                <h4 class="modal-title" id="exampleModalLabel" style="color: rgb(194, 41, 41);">IronLuxury</h4>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <span style="color: black;">Are you sure you want to cancel the reservation?</span>
+                                    
+                            </div>
+                            <div class="modal-footer">
+                            <div class="cancel__btn" style="margin: 25px;">
+                                <form action="/reservation/{{this.id}}/delete" method="POST">
+                                    <button type="submit" style="margin-bottom:10px; width:100px; height:40px;" >
+                                        Cancel
+                                    </button>
+                                </form>
+                            </div>
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            </div>
                         </div>
+                    </div>
+                </div>
+                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
+</div> 
