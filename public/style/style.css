@@ -1186,3 +1186,25 @@ footer h5{
         height: 600px;
         margin: 0 auto;
 }
+
+.background__con{
+  width: 100%;
+  height: 400px;
+  background-image: url('../img/back-contact.jpeg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: center;
+	align-items: center;
+  color: #1A1A1A;
+}
+
+.title__background{
+  color: #fff;
+  text-align: center;
+  height: 100px;
+  width: 50%;
+}
