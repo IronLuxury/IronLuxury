@@ -705,7 +705,7 @@ h6 {
 
 .title__popular{
   text-align: center;
-  font-size: 2.5rem;
+  font-size: 2.3rem;
   margin-bottom: 30px;
   text-transform: uppercase;
 }
@@ -1165,4 +1165,24 @@ footer h5{
               0 0 25px  rgb(196, 50, 50),
               0 0 50px  rgb(196, 50, 50),
               0 0 100px  rgb(196, 50, 50);
+}
+
+.background-error{
+  background-image: url('../img/not-found.jpeg');
+  height: 700px; /* You must set a specified height */
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: cover; 
+  padding-top: 70px;
+}
+
+.title__error{
+  text-align: center;
+  color: white;
+}
+
+ model-viewer {
+        width: 100%;
+        height: 600px;
+        margin: 0 auto;
 }

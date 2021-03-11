@@ -58,7 +58,6 @@ module.exports.doReserve = (req, res, next) => {
             sendRent(email_template)
             req.flash('flashMessage','Your reserve has been successfully completed!')
             res.redirect('/rent')
-            console.log('Reservation created', r)
         })
         .catch((e) => {
             next(e)
@@ -71,4 +70,8 @@ module.exports.doDelete = (req, res, next) => {
         .catch((e) => {
             next(e)
         });
+}
+
+module.exports.model = (req, res, next) => {
+    res.render('cars/modelViewer')
 }

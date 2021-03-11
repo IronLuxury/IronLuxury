@@ -8,7 +8,8 @@ const GOOGLE_SCOPES = ['https://www.googleapis.com/auth/userinfo.email', 'https:
 //const multer = require('multer')
 //const upload = multer({ dest: "./public/uploads"})
 
-const upload = require('./storage.config') //Traemos toda la configuración de cloudinary
+const upload = require('./storage.config'); //Traemos toda la configuración de cloudinary
+const { use } = require('passport');
 
 
 router.get('/', indexController.home)
@@ -31,7 +32,6 @@ router.get('/filterCar', carsController.filterCar)
 router.get('/detail/:id', secure.isAuthenticated, carsController.detail)
 router.get('/reservation', secure.isAuthenticated, carsController.reserve )
 router.post('/reservation/:id', secure.isAuthenticated, carsController.doReserve)
-
 router.post('/reservation/:id/delete', secure.isAuthenticated, carsController.doDelete)
 
 router.get('/editProfile',secure.isAuthenticated,userController.editProfile)
@@ -39,5 +39,7 @@ router.post('/editProfile',secure.isAuthenticated,upload.single("image"),userCon
 
 router.get('/contact',userController.contact)
 router.post('/contact',userController.doContact)
+
+router.get('/modelViewer', carsController.model)
 
 module.exports = router;
