@@ -473,19 +473,50 @@ input[type=date]:invalid::-webkit-datetime-edit {
   padding: 3rem !important
 }
 
-.profile__box{
-  width: 900px;
-  height: 500px;
-}
-
-.image__profile{
-  height: 200px;
-  width: 250px;
+.main__profile{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .title__profile{
-  font-size: 20px;
-  margin: 20px;
+  font-size: 16px;
+  margin-top: 12px;
+}
+
+.btn__profile a{
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  display: inline-block;
+  padding: 10px;
+  color: #fff;
+  font-size: 14px;
+  text-decoration: none;
+  overflow: hidden;
+  transition: .5s;
+  margin-top: 30px;
+  letter-spacing: 3px;
+  background-color: rgb(243, 114, 92);
+}
+
+.btn__profile a:hover{
+  background: rgb(243, 114, 92);
+  color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgb(243, 114, 92),
+              0 0 25px rgb(243, 114, 92),
+              0 0 50px rgb(243, 114, 92),
+              0 0 100px rgb(243, 114, 92);
+}
+
+.backgroud__profile{
+  background-image: url("../img/background.jpeg"); 
+  height: 800px; 
+  background-position: center; 
+  background-repeat: no-repeat; 
+  background-size: cover; 
 }
 
 .btn__box{
@@ -495,15 +526,6 @@ input[type=date]:invalid::-webkit-datetime-edit {
 	justify-content: space-around;
 	align-items: center;
 	align-content: stretch;
-}
-
-.info__profile{
-  font-size: 16px;
-  margin: 20px;
-}
-
-.btn__profile{
-  margin: 20px;
 }
 
 .user-card-full {
@@ -633,52 +655,41 @@ h6 {
 }
 
 /*Edit profile*/
+.input__profile{
+  width: 300px;
+}
 
-.input_name{
-  width: 250px;
-  height: 40px;
-  border:2px solid gray;
+.btn__edit button{
+ position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  display: inline-block;
+  padding: 10px;
+  color: #fff;
+  font-size: 14px;
+  text-decoration: none;
+  overflow: hidden;
+  transition: .5s;
+  border: none;
+  margin-top: 20px;
+  letter-spacing: 4px;
+  background-color: rgb(243, 114, 92);
+}
+
+.btn__edit button:hover{
+  background: rgb(243, 114, 92);
+  color: #fff;
   border-radius: 5px;
+  box-shadow: 0 0 5px rgb(243, 114, 92),
+              0 0 25px rgb(243, 114, 92),
+              0 0 50px rgb(243, 114, 92),
+              0 0 100px rgb(243, 114, 92);
 }
 
-.input_email{
-  width: 250px;
-  height: 40px;
-  border:2px solid gray;
-  border-radius: 5px;
-  
-  
+.select__image{
+  margin-left: 10px;
 }
 
-.input_phone{
-  width: 150px;
-  height: 40px;
-  border:2px solid gray;
-  border-radius: 5px;
-}
-
-.input_age{
-  width: 100px;
-  height: 40px;
-  border:2px solid gray;
-  border-radius: 5px;
-}
-
-.btn_bubmit{
-  margin-top: 100px;
-}
-
-.btn_file{
-  width: 150px;
-}
-
-.backgroud__profile{
-  background-image: url("https://images.unsplash.com/photo-1606556024845-537ed650759c?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MjN8fHdoZWVsc3xlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=60"); 
-  height: 800px; 
-  background-position: center; 
-  background-repeat: no-repeat; 
-  background-size: cover; 
-}
 /*INDEX*/
 .index__info{
   margin-top: 100px;

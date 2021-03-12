@@ -178,7 +178,7 @@ module.exports.reserveTemplate = (email) => {
       <table border="0" cellpadding="0" cellspacing="0" role="presentation" style="border-collapse:separate;line-height:100%;">
         <tr>
           <td align="center" bgcolor="#ce3b3b" role="presentation" style="border:none;border-radius:3px;cursor:auto;mso-padding-alt:10px 25px;background:#ce3b3b;" valign="middle">
-            <a href="${process.env.HOST || `http://localhost:${process.env.PORT || 3000}`}/reservation" style="display: inline-block; background: #ce3b3b; font-family: Arial, sans-serif; font-size: 16px; font-weight: bold; line-height: 120%; margin: 0; text-transform: none; padding: 10px 25px; mso-padding-alt: 0px; border-radius: 3px; text-decoration: none; color: inherit;" target="_blank">
+            <a href="${process.env.HOST || `http://localhost:${process.env.PORT || 3000}`}reservation" style="display: inline-block; background: #ce3b3b; font-family: Arial, sans-serif; font-size: 16px; font-weight: bold; line-height: 120%; margin: 0; text-transform: none; padding: 10px 25px; mso-padding-alt: 0px; border-radius: 3px; text-decoration: none; color: inherit;" target="_blank">
               Cancel your reservation
             </a>
           </td>
