@@ -1,0 +1,37 @@
+<header>
+    <nav class="nav__bar">
+        <ul class="nav__left inline elements">
+            <a href="/"><img src="/img/logo.png" alt="logo" style="height: 40px; margin-right: 20px"></a>
+            <li class="inline elements"><a class="elements" href="/">Home</a></li>
+            <li class="inline elements"><a class="elements" href="/rent">Rent</a></li>
+            <li class="inline elements"><a class="elements" href="/contact">Contact us</a></li>
+        </ul>
+        {{#if currentUser}}
+        <ul class="nav__right">
+            <li class="nav-item dropdown nav__item" style="text-decoration: none;">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button"
+                    data-bs-toggle="dropdown" aria-expanded="false" style="color: white;">
+                    Profile
+                </a>
+                <ul class="dropdown-menu nav__menu">
+                    <li class="title__menu"><a class="title__menu" href="/profile">Account</a></li>
+                    <li class="title__menu"><a class="title__menu" href="/reservation">Reservations</a></li>
+                    <li>
+                        <hr class="dropdown-divider">
+                    </li>
+                    <form action="/logout" method="POST">
+                        <button class="btn__logout">Logout</button>
+                    </form>
+                </ul>
+            </li>
+        </ul>
+        {{else}}
+
+        <ul class="nav__right inline elements">
+            <li class="inline elements"><a class="elements" href="/register">Sign Up</a></li>
+            <li class="inline elements"><a class="elements" href="/login">Login</a></li>
+        </ul>
+        {{/if}}
+    </nav>
+
+</header>
